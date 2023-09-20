@@ -1,0 +1,13 @@
+在jupyterlab中，安装 plotnine 后画图，提示报错ImportError: cannot import name 'docstring' from 'matplotlib'
+
+直接在jupyterlab中 pip install --upgrade matplotlib ，无效。
+
+查阅网上帖子后尝试重新删除和安装，成功。但是重新安装的方法有区别。
+
+无效的重新安装：
+直接在jupyterlab中 uninstall 和install，无效。
+
+有效的成功安装：
+在根目录下手动删除matplotlib。（比如我的是C:\ProgramData\Anaconda3\Lib\site-packages目录下）
+
+在Anaconda Prompt (Anaconda3)中，pip install matplotlib。随后在jupyterlab中提示No module named 'matplotlib_inline'。于是在Anaconda Prompt (Anaconda3)中安装matplotlib_inline：pip install _inline。重启后jupyterlab可以正常出图。
